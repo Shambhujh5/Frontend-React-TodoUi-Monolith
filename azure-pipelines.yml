@@ -5,7 +5,7 @@ stages:
   - stage: SoftwareAnalysis
     displayName: Software Analysis
     jobs:
-      - job: 
-
-
+      - job: DependencyVulnerabilityScan
+        displayName: Dependency Vulnerability Scan(Retire.js)
+        
 
