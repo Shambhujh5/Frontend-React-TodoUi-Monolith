@@ -3,9 +3,13 @@ pool: Default
 
 stages:
   - stage: SoftwareAnalysis
-    displayName: Software Composition Analysis
+    displayName: Software Component Analysis
     jobs:
       - job: DependencyVulnerabilityScan
         displayName: Dependency Vulnerability Scan(Retire.js)
+        steps:
+        - task: Retire@1
+          inputs:
+            path: '$(System.DefaultWorkingDirectory)'
         
         
