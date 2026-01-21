@@ -17,4 +17,4 @@ stages:
             targetType: 'inline'
             script: |
               npm install -g retire
-              retire
+              retire --outputformat cyclonedx
