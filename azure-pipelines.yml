@@ -3,8 +3,9 @@ pool: Default
 
 stages:
   - stage: SoftwareAnalysis
-    displayName: Software Analysis
+    displayName: Software Composition Analysis
     jobs:
       - job: DependencyVulnerabilityScan
         displayName: Dependency Vulnerability Scan(Retire.js)
+        
         
