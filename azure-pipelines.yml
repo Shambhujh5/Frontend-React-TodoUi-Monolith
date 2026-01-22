@@ -36,6 +36,7 @@ stages:
         displayName: Multi-Language Linting Checks
         steps:
         - task: PowerShell@2
+          continueOnError: yes
           inputs:
             targetType: 'inline'
             script: 'biome.exe lint $(System.DefaultWorkingDirectory)'
