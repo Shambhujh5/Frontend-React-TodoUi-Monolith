@@ -28,9 +28,8 @@ stages:
         - task: SonarQubePrepare@8
           inputs:
             SonarQube: 'SonarQube'
-            scannerMode: 'dotnet'
-            projectKey: 'todoproject'
-            projectName: 'todoproject'
+            scannerMode: 'cli'
+            configMode: 'file'
         - task: SonarQubePublish@8
           inputs:
             pollingTimeoutSec: '300'
