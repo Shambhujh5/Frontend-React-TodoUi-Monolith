@@ -19,5 +19,6 @@ stages:
             script: |
               npm install -g retire
               retire --outputformat cyclonedx
-             
+                           
+           
           
