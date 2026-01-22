@@ -31,3 +31,6 @@ stages:
             scannerMode: 'dotnet'
             projectKey: 'todoproject'
             projectName: 'todoproject'
+        - task: SonarQubePublish@8
+          inputs:
+            pollingTimeoutSec: '300'
