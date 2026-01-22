@@ -13,8 +13,11 @@ stages:
             versionSource: 'spec'
             versionSpec: '18.x'
         - task: PowerShell@2
+          displayName: Run Dependency Security Scan
           inputs:
             targetType: 'inline'
             script: |
               npm install -g retire
               retire --outputformat cyclonedx
+             
+          
