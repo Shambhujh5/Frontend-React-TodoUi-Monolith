@@ -28,4 +28,4 @@ stages:
         - task: PowerShell@2
           inputs:
             targetType: 'inline'
-            script: 'sonar-scanner.bat -D"sonar.projectKey=todoproject" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=$(token)"'
+            script: 'sonar-scanner.bat -D"sonar.projectKey=todoproject" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_ceeb24ab07a27fa2099c1d6150aaaad904a75008"'
