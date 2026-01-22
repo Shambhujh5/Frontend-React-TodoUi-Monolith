@@ -19,6 +19,13 @@ stages:
             script: |
               npm install -g retire
               retire --outputformat cyclonedx
+  - stage: StaticCodeAnalysis
+    displayName: Static Code Analysis
+    jobs:
+      - job: SonarQubeAnalysis
+        displayName: Static Code Analysis(SonarQube)
+        
+              
                            
            
           
