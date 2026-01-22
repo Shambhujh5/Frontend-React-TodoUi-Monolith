@@ -24,3 +24,10 @@ stages:
     jobs:
       - job: SonarQubeAnalysis
         displayName: Static Code Analysis(SonarQube)
+        steps:
+        - task: SonarQubePrepare@8
+          inputs:
+            SonarQube: 'SonarQube'
+            scannerMode: 'dotnet'
+            projectKey: 'todoproject'
+            projectName: 'todoproject'
