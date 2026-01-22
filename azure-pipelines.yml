@@ -24,8 +24,14 @@ stages:
     jobs:
       - job: SonarQubeAnalysis
         displayName: Static Code Analysis(SonarQube)
-        
-              
+        steps:
+        - task: SonarQubeAnalyze@8
+          inputs:
+            jdkversion: 'JAVA_HOME_17_X64'
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: 'sonar-scanner.bat -D"sonar.projectKey=todoproject" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=$(Token)"'
                            
            
           
