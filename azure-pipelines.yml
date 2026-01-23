@@ -67,4 +67,4 @@ stages:
           displayName: Build the Project
           inputs:
             targetType: 'inline'
-            script: 'Build the Project:'
+            script: 'npm run build'
