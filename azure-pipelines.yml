@@ -47,3 +47,24 @@ stages:
             script: |
               pip install --user yamllint 
               yamllint $(System.DefaultWorkingDirectory)
+  - stage : BuildAndPackage
+    displayName: Build & Artifact Packaging
+    jobs:
+      - job: ApplicationBuild
+        displayName: Application Build
+        steps:
+        - task: NodeTool@0
+          displayName: Install Node.Js
+          inputs:
+            versionSource: 'spec'
+            versionSpec: '16.x'
+        - task: PowerShell@2
+          displayName: Install Dependencies
+          inputs:
+            targetType: 'inline'
+            script: 'npm install'
+        - task: PowerShell@2
+          displayName: Build the Project
+          inputs:
+            targetType: 'inline'
+            script: 'Build the Project:'
