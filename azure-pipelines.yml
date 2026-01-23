@@ -73,3 +73,8 @@ stages:
             targetPath: '$(Pipeline.Workspace)/build'
             artifact: 'todofrontend app'
             publishLocation: 'pipeline'
+  - stage : AppDeployment
+    displayName: App Deploy
+    jobs:
+      - job: Appdeplyment
+        displayName:  App deplyment          
