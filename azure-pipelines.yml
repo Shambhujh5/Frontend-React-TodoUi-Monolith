@@ -77,4 +77,10 @@ stages:
     displayName: App Deploy
     jobs:
       - job: Appdeplyment
-        displayName:  App deplyment          
+        displayName:  App deplyment
+        steps:
+        - task: DownloadPipelineArtifact@2
+          inputs:
+            buildType: 'current'
+            artifactName: 'todofrontend app'
+            targetPath: '$(Pipeline.Workspace)/build_artifacts'
