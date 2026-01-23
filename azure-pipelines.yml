@@ -40,11 +40,11 @@ stages:
           inputs:
             targetType: 'inline'
             script: 'biome.exe lint $(System.DefaultWorkingDirectory)'
-        - task: UsePythonVersion@0
-          inputs:
-            versionSpec: '3.x'
-            addToPath: true
-            architecture: 'x64'
+        # - task: UsePythonVersion@0
+        #   inputs:
+        #     versionSpec: '3.x'
+        #     addToPath: true
+        #     architecture: 'x64'
         - task: PowerShell@2
           inputs:
             targetType: 'inline'
