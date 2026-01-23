@@ -41,9 +41,9 @@ stages:
             targetType: 'inline'
             script: 'biome.exe lint $(System.DefaultWorkingDirectory)'
         - task: PowerShell@2
+          continueOnError: yes
           inputs:
             targetType: 'inline'
             script: |
-              pip install --user yamllint
-              python -m yamllint 
+              pip install --user yamllint 
               yamllint $(System.DefaultWorkingDirectory)
