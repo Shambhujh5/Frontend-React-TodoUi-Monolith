@@ -84,3 +84,5 @@ stages:
             buildType: 'current'
             artifactName: 'todofrontend app'
             targetPath: '$(Pipeline.Workspace)/build_artifacts'
+
+       
