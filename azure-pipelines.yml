@@ -74,7 +74,7 @@ stages:
             artifact: 'todofrontend app'
             publishLocation: 'pipeline'
   - stage : AppDeployment
-    displayName: App Deploy
+    displayName: Deploy to VM(Enviroments) 
     jobs:
       - job: Appdeplyment
         displayName:  App deplyment
