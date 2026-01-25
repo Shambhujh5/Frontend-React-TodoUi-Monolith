@@ -96,9 +96,8 @@ stages:
                 inputs:
                   buildType: 'current'
                   artifactName: 'todofrontend app'
-                  targetPath: '$(Pipeline.Workspace)/build_artifacts'
-
-              - task: CmdLine@2
+                  targetPath: '$(Pipeline.Workspace)'
+              - task: Bash@3
                 inputs:
-                  script: 'cp -r $(Pipeline.Workspace)/build_artifacts /* /var/www/html'
-              
+                  targetType: 'inline'
+                  script: 'cp -r $(Pipeline.Workspace)/* /var/www/html/'
