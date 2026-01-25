@@ -86,8 +86,8 @@ stages:
       - deployment: deploytovm
         displayName: Deploye to VM
         environment:
-         name: TodoUi-dev 
-         resourceType: virtualmachine
+         name: frontend-deploy
+         resourceType: virtualMachine
         strategy:
           runOnce:
             deploy:
