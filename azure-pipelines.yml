@@ -100,5 +100,5 @@ stages:
 
               - task: CmdLine@2
                 inputs:
-                  script: 'cp $(Pipeline.Workspace)/build_artifacts /* /var/www/html'
+                  script: 'cp -r $(Pipeline.Workspace)/build_artifacts /* /var/www/html'
               
