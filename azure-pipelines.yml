@@ -73,16 +73,23 @@ stages:
             targetPath: '$(Pipeline.Workspace)/build'
             artifact: 'todofrontend app'
             publishLocation: 'pipeline'
-  - stage : AppDeployment
-    displayName: Deploy to VM(Enviroments) 
-    jobs:
-      - job: Appdeplyment
-        displayName:  App deplyment
-        steps:
-        - task: DownloadPipelineArtifact@2
-          inputs:
-            buildType: 'current'
-            artifactName: 'todofrontend app'
-            targetPath: '$(Pipeline.Workspace)/build_artifacts'
 
-       
+        # - task: DownloadPipelineArtifact@2
+        #   inputs:
+        #     buildType: 'current'
+        #     artifactName: 'todofrontend app'
+        #     targetPath: '$(Pipeline.Workspace)/build_artifacts'
+    
+  - stage : AppDeployment
+    displayName: Deploy to VM(Enviroments)
+    jobs:
+      - deployment: deploytovm
+        displayName: Deploye to VM
+        environment:
+         name: TodoUi-dev 
+         resourceType: virtualmachine
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                -  
